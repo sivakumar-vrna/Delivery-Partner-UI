@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-icon (click)="navigateHome()" name="arrow-back-outline" class="icon"></ion-icon>
+    </ion-buttons>
+    <div class="title-cnt">
+      <ion-title>Manage Delivery Persons</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-row>
+     <h3 class="head-cnt">Delivery Persons List</h3>
+    </ion-row>
+  </div>
+  
+  <ion-card>
+    <ion-list class="flex-container" *ngFor="let item of data">
+      <ion-card-header>
+        <div class="title-icon-cnt">
+          <ion-card-title class="title">{{ item.name }}</ion-card-title>
+          <ion-icon color="primary" class="checkmark-icon" name="checkmark-circle-sharp"></ion-icon>
+        </div>
+        <ion-card-subtitle class="ph-cnt w-100">{{ item.phone }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon (click)="presentModal()" class="edit-icon" name="create-outline"></ion-icon>
+      </ion-card-content>
+    </ion-list>
+
+    <ion-list class="flex-container" *ngFor="let item of Editdata">
+      <ion-card-header>
+        <div class="title-icon-cnt">
+          <ion-card-title class="title">{{ item.name }}</ion-card-title>
+          <h6 class="verify-label">{{item.verify}}</h6>
+        </div>
+        <ion-card-subtitle class="ph-cnt1 w-100">{{ item.phone }}</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content class="card-actions">
+        <ion-button color="warning" (click)="onNavigate()" class="approve-btn">Approve</ion-button>
+        <ion-icon  (click)="presentModal()" class="edit-icon" name="create-outline"></ion-icon>
+      </ion-card-content>
+    </ion-list>
+  </ion-card>
+  
+  <div class="new-person">
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full"  (click)="presentModal()" class="add-button">
+          <ion-icon class="plus-icon" slot="start"  name="add-sharp"></ion-icon>ADD NEW DELIVERY PERSON
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+
+
+
+

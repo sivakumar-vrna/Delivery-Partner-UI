@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-title class="ion-text-center">Add New Delivery Person</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="input-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Delivery Person Home</ion-label>
+          <ion-item>
+            <ion-input type="text" placeholder="Enter Name"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Contact Number</ion-label>
+          <ion-item>
+            <ion-input type="number"  placeholder="98989 98989"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar  class="footer-toolbar">
+    <ion-button class="cancel-btn" slot="start" (click)="dismissModal()">Cancel</ion-button>
+    <ion-button color="warning" class="end-btn" slot="end" (click)="dismissModal()">Save</ion-button>
+  </ion-toolbar>
+</ion-footer>

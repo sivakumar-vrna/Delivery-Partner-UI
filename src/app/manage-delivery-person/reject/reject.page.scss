@@ -1,0 +1,32 @@
+
+.cancel-btn, .end-btn {
+    position: relative;
+    width: 90%; 
+    max-width: 150px;
+    font-weight: 500;
+}
+.cancel-btn{
+    left: 20px;
+    --background: #aaa5a52f;
+    --color:black;
+}
+.end-btn{
+    right: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+ion-textarea {
+    width: 100%;
+    max-width: 500px;
+    background-color: #f0f0f0; 
+    border-radius: 4px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+  

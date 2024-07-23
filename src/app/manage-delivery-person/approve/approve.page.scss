@@ -1,0 +1,38 @@
+.cancel-btn, .end-btn {
+    position: relative;
+    width: 90%; 
+    max-width: 150px;
+    font-weight: 500;
+}
+.cancel-btn{
+    left: 20px;
+    --background: #aaa5a52f;
+    --color:black;
+}
+.end-btn{
+    right: 20px;
+}
+ion-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    padding: 16px;           
+  }
+  
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center; 
+    top: 50px;    
+}
+  
+.container ion-label {
+    margin-top: 8px; 
+}
+  
+h3 {
+    margin: 8px 0; 
+}
+  

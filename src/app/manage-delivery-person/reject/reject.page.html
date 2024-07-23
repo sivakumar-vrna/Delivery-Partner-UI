@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="medium">
+    <div class="title-cnt">
+      <ion-title class="ion-text-center">Reject Delivery Person</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container"> 
+    <ion-textarea [(ngModel)]="reason" placeholder="Enter reason for disapproval"></ion-textarea>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar  class="footer-toolbar">
+    <ion-button class="cancel-btn" slot="start" (click)="dismiss()">CANCEL</ion-button>
+    <ion-button color="warning" class="end-btn" slot="end" (click)="dismiss()">CONFIRM</ion-button>
+  </ion-toolbar>
+</ion-footer>

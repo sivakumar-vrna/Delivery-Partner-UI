@@ -1,0 +1,109 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-icon (click)="backToManage()" name="arrow-back-outline" class="icon"></ion-icon>
+    </ion-buttons>
+    <div class="title-cnt">
+      <ion-title>Manage Delivery Persons</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-row>
+      <h3 class="head-cnt">Delivery Persons List</h3>
+    </ion-row>
+  </div>
+
+  <ion-card>
+    <ion-grid>
+      <ion-row class="flex-container">
+          <div class="first">
+            <ion-col size="6">
+              <ion-list lines="none" class="item-stacked">
+                <ion-card-subtitle>Full name</ion-card-subtitle>
+                <ion-title class="title">Siva.C</ion-title>
+              </ion-list>
+            </ion-col>
+            <ion-col  size="6">
+              <ion-list lines="none" class="item-stacked">
+                <ion-card-subtitle>Mobile Number
+                  <ion-icon color="primary" class="checkmark-icon" name="checkmark-circle-sharp"></ion-icon>
+                </ion-card-subtitle>
+                <ion-title  class="title">+91 98989 98989</ion-title>
+              </ion-list>
+            </ion-col>
+           </div>
+           <div class="two">
+            <ion-thumbnail class="thumbnail-end">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+            </ion-thumbnail>
+          </div>
+        </ion-row>
+      
+      <ion-row>
+        <ion-col size="6">
+          <ion-list class="item-stacked">
+            <ion-card-subtitle>Date of Birth</ion-card-subtitle>
+            <ion-title  class="title">DD-MM-YYYY</ion-title>
+          </ion-list>
+        </ion-col>
+        <ion-col size="6">
+          <ion-list class="item-stacked">
+            <ion-card-subtitle>Gender</ion-card-subtitle>
+            <ion-title  class="title">Male</ion-title>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size="12">
+          <ion-list class="item-stacked">
+            <ion-card-subtitle>Adhaar
+              <ion-icon color="primary" class="checkmark-icon" name="checkmark-circle-sharp"></ion-icon>
+            </ion-card-subtitle>
+            <ion-title  class="title">XXXX XXXX XXXX</ion-title>
+          </ion-list>
+        </ion-col>
+        <ion-col size="12">
+          <ion-list class="item-stacked">
+            <ion-card-subtitle>Address</ion-card-subtitle>
+            <p class="address">no:2 Main Road, Balaji Nagar, Siruseri, Chennai - 600034</p>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  
+  <ion-card>
+    <ion-row class="flex-container">
+      <div class="first">
+        <ion-col size="6">
+          <ion-list lines="none" class="item-stacked">
+            <ion-card-subtitle>Two Wheeler License NO</ion-card-subtitle>
+            <ion-title class="title">+91 98989 98989</ion-title>
+          </ion-list>
+        </ion-col>
+        <ion-col  size="6">
+          <ion-list lines="none" class="item-stacked">
+            <ion-card-subtitle class="single-line">Two Wheeler Registration NO</ion-card-subtitle>
+            <ion-title  class="title">TN11 XX XXXX</ion-title>
+          </ion-list>
+        </ion-col>
+       </div>
+       <div class="two">
+        <ion-thumbnail class="thumbnail-end">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+      </div>
+    </ion-row>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar  class="footer-toolbar">
+    <ion-button class="cancel-btn" slot="start" (click)="openRejectModal()">REJECT</ion-button>
+    <ion-button color="warning" class="end-btn" (click)="OpenApproveModal()" slot="end">APPROVE</ion-button>
+  </ion-toolbar>
+</ion-footer>

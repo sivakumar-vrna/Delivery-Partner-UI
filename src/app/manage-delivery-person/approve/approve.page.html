@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="medium">
+    <div class="title-cnt">
+      <ion-title class="ion-text-center">Approve Delivery Person</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="container"> 
+      <ion-label>Delivery Person</ion-label>
+      <h3>Mr.Siva</h3>
+      <ion-label>is Verified and Approved</ion-label>
+      <ion-label>Successfully</ion-label>
+    </div>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar  class="footer-toolbar">
+      <ion-button class="cancel-btn" slot="start" (click)="dismiss()">CANCEL</ion-button>
+      <ion-button color="warning" class="end-btn" (click)="dismiss()" slot="end">CONFIRM</ion-button>
+    </ion-toolbar>
+  </ion-footer>

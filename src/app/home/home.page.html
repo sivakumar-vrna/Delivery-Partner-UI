@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back-outline" class="icon"></ion-icon>
+    </ion-buttons>
+    <div class="title-cnt">
+      <h3 class="head-cnt">Order Id:<span>724</span></h3>
+      <h2 class="head-cnt">Date:<span>Jun 12, 2024</span></h2>
+    </div>
+    <ion-button slot="end" class="button-cnt" color="warning">Ready for Shipping</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="flex-container">
+    <ion-card-header>
+      <ion-card-subtitle class="w-100">Select</ion-card-subtitle>
+      <ion-card-title class="card-title">Delivery Partner</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto" class="ion-text-end">
+          <ion-button  class="select-btn"  id="open-action-sheet">
+            <h6 slot="start" class="select-label">{{ selectedDeliveryType || 'Select Type' }}</h6>
+            <ion-icon slot="end" name="chevron-down"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-action-sheet id="action-sheet" trigger="open-action-sheet" header="Select Delivery Partner" [buttons]="actionSheetButtons"></ion-action-sheet>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="container" *ngIf="isDeliverybySelf">
+    <ion-row class="cnt-row">
+      <ion-col size="auto" class="ion-text-start flex-col">
+        <h3 class="manage-btn1">Assign Delivery Person</h3>
+      </ion-col>
+      <ion-col size="auto" class="ion-text-end flex-col">
+        <h3 (click)="navigate()" class="manage-btn2">MANAGE</h3>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-card *ngIf="isDeliverybySelf">
+    <ion-list class="flex-container" *ngFor="let item of data" >
+      <ion-card-header>
+        <div class="title-icon-cnt">
+          <ion-card-title class="title">{{ item.name }}</ion-card-title>
+          <ion-icon color="primary" class="checkmark-icon" name="checkmark-circle-sharp"></ion-icon>
+        </div>
+        <ion-card-subtitle class="ph-cnt w-100">{{ item.phone }}</ion-card-subtitle>
+        <h6 [ngClass]="{'status-ready': item.status === 'Ready', 'status-available': item.status !== 'Ready'}" class="card-cnt">{{ item.status }}</h6>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button *ngIf="!item.isAssigned" class="assign-btn" slot="end" [disabled]="item.status !== 'Ready'" (click)="toggleAssign(item)">Assign</ion-button>
+        <ion-button *ngIf="item.isAssigned" class="assign-btn" slot="end" color="warning" (click)="toggleAssign(item)">Assigned</ion-button>
+      </ion-card-content>
+    </ion-list>
+  </ion-card>
+</ion-content>
+  
+<ion-footer *ngIf="isDeliverybySelf">
+    <ion-toolbar  class="footer-toolbar">
+      <ion-button class="cancel-btn" (click)="resetDeliveryType(); setDeliveryBySelf(false)" slot="start">Cancel</ion-button>
+      <ion-button color="warning" class="end-btn" slot="end" [disabled]="!isAnyItemAssigned()">Confirm</ion-button>
+    </ion-toolbar>
+</ion-footer>
+  
+
+
+
+
